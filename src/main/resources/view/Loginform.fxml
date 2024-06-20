@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.LoginformController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="437.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginformController">
+   <children>
+      <AnchorPane prefHeight="493.0" prefWidth="377.0">
+         <children>
+            <Label layoutX="143.0" layoutY="49.0" text="Sign in" textFill="#34ace0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="27.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmail" layoutX="47.0" layoutY="131.0" prefHeight="25.0" prefWidth="241.0" promptText="Email">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPWD" layoutX="47.0" layoutY="196.0" prefHeight="25.0" prefWidth="241.0" promptText="Password">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <Hyperlink layoutX="189.0" layoutY="235.0" text="Forgot Password ?" underline="true" />
+            <JFXRadioButton fx:id="rBtnAccount" layoutX="38.0" layoutY="278.0" selected="true" text="Doctor">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="accountType" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="150.0" layoutY="278.0" text="Pation" toggleGroup="$accountType">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXRadioButton>
+            <JFXButton buttonType="RAISED" layoutX="38.0" layoutY="319.0" onAction="#signinOnAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #34ace0; -fx-background-radius: 10;" text="Sign in">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="205.0" layoutY="319.0" onAction="#signUpOnAction" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #05c46b; -fx-background-radius: 10;" text="Sign up">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="137.0" layoutY="436.0" text="2024 All right reserved.">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="159.0" layoutY="451.0" text="Version  1.0.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="512.0" fitWidth="496.0" layoutX="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../java/assets/happy-doctor-holding-clipboard-with-patients.jpg" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
